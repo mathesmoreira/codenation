@@ -1,6 +1,8 @@
+#Codenation - Aula de Socket
 import socket
 
-#Mostrando a comunicacao entre o server, neste caso meu próprio PC, com o cliente (cliente criado com nome "cliente.py")
+#Mostrando a comunicacao entre o server, neste caso meu próprio PC, com o cliente
+#(cliente criado com nome "cliente.py")
 
 HOST = '127.0.0.1'
 PORT = 65432

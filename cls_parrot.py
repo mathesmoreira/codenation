@@ -43,7 +43,7 @@ class Parrot:
 blu = Parrot("Blu", 10)
 
 # call our instance methods
-print(blu.sing("'Happy'"))
+blu.sing("'Happy'")
 print(blu.dance())
 
 #Inheritance
@@ -101,14 +101,14 @@ class Computer:
 c = Computer()
 c.sell()
 
-# change the price but this doesnt work because of __maxprice is a private attribute.
+# If I try to change the price won't work because of __maxprice is a private attribute.
 # We have to use the setter function
 c.__maxprice = 1000
-c.sell()
+c.sell() #Instead of print 1900 it'll print 900
 
 # using setter function
 c.setMaxPrice(1000)
-c.sell()
+c.sell() 
 
 
 #Polymorphism

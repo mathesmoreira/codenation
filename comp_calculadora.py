@@ -7,16 +7,18 @@ class calculadora():
         self.display = display()
     def novaoperacao(self,valor1,valor2):
         self.entrada.valorEntrada(valor1,valor2)
-        self.bateria.uso()
+
     def soma(self):
         soma = self.operacoes.soma(self.entrada.getvalor())
         self.bateria.uso()
         self.display.mostratexto(soma)
+    def subtracao(self):
+        subtracao = self.operacoes.subtracao(self.entrada.getvalor())
+        self.bateria.uso()
+        self.display.mostratexto(subtracao)
 
 
-
-
-#Toda vez que usar a calculadora a bateria é consumida 90%
+#Toda vez que usar a calculadora a bateria atual é consumida em 10%
 class bateria():
     def __init__(self):
         self.pcbateria = 100
@@ -24,7 +26,7 @@ class bateria():
 
     def uso(self):
         self.pcbateria = self.pcbateria*self.gasto
-        self.getbateriafraca()
+        self.getbateriafraca() #Imprimindo, após uso de calculadora, a porcentagem de bateria
 
     def getbateriafraca(self):
         print(f'Seu PC tem {self.pcbateria}% de bateria')
@@ -43,9 +45,9 @@ class teclascalculadora():
         self.valor1 = v1
         self.valor2 = v2
     def getvalor(self):
-        return [self.valor1,self.valor2]
+        return [self.valor1,self.valor2] #Retornando uma lista de valores
 
-#Calculadora ira realizar duas op. soma e subtracao
+#Classe 'operacoes' que realizará duas operacoes: soma e subtracao
 class operacoes():
     def soma(self,valores):
         val = 0
@@ -54,8 +56,7 @@ class operacoes():
         return val
     def subtracao(self,valores):
         val=0
-        for v in valores:
-            val -= v
+        val = valores[0] - valores[1]
         return val
 
 #Display(Mostrando valores na tela)
@@ -70,8 +71,8 @@ class display():
 
 cal1 = calculadora()
 cal1.novaoperacao(10,20)
-
 cal1.soma()
+cal1.subtracao()
 
 cal1.novaoperacao(14,23)
 cal1.soma()

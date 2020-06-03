@@ -1,16 +1,16 @@
 #Declarando lista vazia
 lista_vazia = []
-#print(lista_conv)
+print(lista_conv)
 
-#Lista de nomes
+#Lista de convidados
 lista_conv = ['Josefino','Josefao','Joselito', 'Joana']
 
-#Adicionando a lista de nomes um infiltrado
+#Adicionando, a lista de convidados, um infiltrado
 lista_conv.append('Furao')
 
 #Removendo um convidado da lista de nomes
 lista_conv.remove('Joselito') 
-#print(lista_conv)
+print(lista_conv)
 
 #Print do nome do ultimo convidado
 print(lista_conv[-1])
